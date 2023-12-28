@@ -15,12 +15,12 @@ LazyData: true
 RoxygenNote: 7.2.3
 Imports:
     rjags,
-    dplyr,
-    methods
+    dplyr
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    methods
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)

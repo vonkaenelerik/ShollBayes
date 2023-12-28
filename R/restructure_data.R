@@ -43,6 +43,13 @@ restructure_data = function(m, ...){
     return(m)
 }
 
+#' Restructures data for fitting the UG3 model
+#' @param y Vector of intersections
+#' @param R Vector of radii
+#' @param Cell_ID ID vector indexing cells
+#' @param Image_ID ID vector indexing images
+#' @param Animal_ID ID vector indexing animals
+#' @keywords internal
 restructure_data_ug3 = function(y, R, Cell_ID, Image_ID, Animal_ID){
     #coerce data to data.frame
     data = data.frame(y, R, Cell_ID, Image_ID, Animal_ID)
@@ -79,7 +86,12 @@ restructure_data_ug3 = function(y, R, Cell_ID, Image_ID, Animal_ID){
     return(d)
 }
 
-
+#' Restructures data for fitting the MDND model
+#' @param y Vector of intersections
+#' @param R Vector of radii
+#' @param Group_ID ID vector indexing treatment group
+#' @param Animal_ID ID vector indexing animals
+#' @keywords internal
 restructure_data_mdnd = function(y, R, Animal_ID, Group_ID){
     #coerce data to data.frame
     data = data.frame(y, R, Animal_ID, Group_ID)
@@ -110,7 +122,14 @@ restructure_data_mdnd = function(y, R, Animal_ID, Group_ID){
     return(d)
 }
 
-
+#' Restructures data for fitting the CRKO model
+#' @param y Vector of intersections
+#' @param R Vector of radii
+#' @param Cell_ID ID vector indexing cells
+#' @param Group_ID ID vector indexing treatment group
+#' @param Animal_ID ID vector indexing animals
+#' @param Genotype_ID ID vector indexing genotype
+#' @keywords internal
 restructure_data_crko = function(y, R, Cell_ID, Group_ID, Animal_ID, Genotype_ID){
     #coerce data to data.frame
     data = data.frame(y, R, Cell_ID, Group_ID, Animal_ID, Genotype_ID)

@@ -10,7 +10,8 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  message = FALSE
 )
 ```
 
@@ -49,13 +50,13 @@ We provide wrapper functions for initializing, updating, and sampling from a JAG
 
 ```{r}
 set.seed(293402)
-m = initialize_model(m, n.chains = 4, n.adapt = 50)
+m = initialize_model(m, n.chains = 4, n.adapt = 200)
 
 set.seed(123901)
-update_model(m, n.iter = 50)
+update_model(m, n.iter = 200)
 
 set.seed(349058)
-m = sample_model(m, n.iter = 100, new_sample = F)
+m = sample_model(m, n.iter = 500, new_sample = F)
 ```
 
 

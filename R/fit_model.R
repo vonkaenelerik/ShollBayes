@@ -36,7 +36,12 @@ initialize_model = function(m, n.chains = 1, n.adapt = 1000, quiet = FALSE){
     return(m)
 }
 
-
+#' Fits the UG3 model
+#' @param m A shollmcmcObj created by initialize_model()
+#' @param n.chains The number of chains used for MCMC sampling. For details see ?rjags::jags.model.
+#' @param n.adapt The number of adaptation iterations. For details see ?rjags::jags.model.
+#' @param quiet For details see ?rjags::jags.model.
+#' @keywords internal
 initialize_model_ug3 = function(m, n.chains, n.adapt, quiet){
     jgs_m = rjags::jags.model(file = textConnection(m@model),
                               data = m@jags_data,
@@ -50,7 +55,12 @@ initialize_model_ug3 = function(m, n.chains, n.adapt, quiet){
     return(jgs_m)
 }
 
-
+#' Fits the MDND model
+#' @param m A shollmcmcObj created by initialize_model()
+#' @param n.chains The number of chains used for MCMC sampling. For details see ?rjags::jags.model.
+#' @param n.adapt The number of adaptation iterations. For details see ?rjags::jags.model.
+#' @param quiet For details see ?rjags::jags.model.
+#' @keywords internal
 initialize_model_mdnd = function(m, n.chains, n.adapt, quiet){
     jgs_m = rjags::jags.model(file = textConnection(m@model),
                               data = m@jags_data,
@@ -63,6 +73,12 @@ initialize_model_mdnd = function(m, n.chains, n.adapt, quiet){
     return(jgs_m)
 }
 
+#' Fits the CRKO model
+#' @param m A shollmcmcObj created by initialize_model()
+#' @param n.chains The number of chains used for MCMC sampling. For details see ?rjags::jags.model.
+#' @param n.adapt The number of adaptation iterations. For details see ?rjags::jags.model.
+#' @param quiet For details see ?rjags::jags.model.
+#' @keywords internal
 initialize_model_crko = function(m, n.chains, n.adapt, quiet){
     jgs_m = rjags::jags.model(file = textConnection(m@model),
                               data = m@jags_data,
@@ -143,7 +159,6 @@ sample_model = function(m, variable.name = 'All', n.iter, thin = 1, na.rm = FALS
     if(new_sample){
         m@samples = samp
     } else {
-        browser()
         if(is.null(m@samples)) {
             m@samples = samp
         } else {

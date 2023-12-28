@@ -1,3 +1,5 @@
+#' An S4 object for storing data and models for a Sholl analysis dataset.
+#' @keywords internal
 setClass("shollmcmcObj",
          slots = list(model_alias = "character",
                       model = "character",
