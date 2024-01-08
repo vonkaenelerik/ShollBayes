@@ -6,6 +6,9 @@ Running the ungrouped mouse example
 ================
 
 ``` r
+#install package from github
+devtools::install_github("https://github.com/vonkaenelerik/ShollBayes.git")
+
 library(ShollBayes)
 library(dplyr)
 ```
